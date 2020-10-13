@@ -263,3 +263,7 @@ __pycache__/
 # obj and Cache files
 *.cache
 obj
+.* 
+*.log 
+bin/ 	
+*.obj 	
