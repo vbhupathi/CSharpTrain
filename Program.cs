@@ -9,16 +9,81 @@ namespace CSharpTrain
     {
         static void Main(string[] args)
         {
+
+            //Aggregate Operations
+            //myAggregateOperation();
+            //myAggregateOperationWithSeedandResultSelector();
+            //myAggregateOperationWithSeedAndFunc();
+
+            /*//Filtering Data Operations
             MyWhereFilter();
             MyWhereFilterWithIndex();
             
+            //Projection Operations
             MySelectProjection();
             MySelectProjectionWithIndex();
 
             MySelectManyProjectionWithTCollectionSelector();
-            //MySelectManyProjectionWithTCollectionSelectorAndIndex();
+            MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
-            MySelectManyProjectionWithSelectorIndex();
+            MySelectManyProjectionWithSelectorIndex();*/
+
+        }
+
+        private static void myAggregateOperationWithSeedandResultSelector()
+        {
+            string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
+
+            // Determine whether any string in the array is longer than "banana".
+            string longestName =
+                fruits.myAggregate("banana",
+                                (longest, next) =>
+                                    next.Length > longest.Length ? next : longest,
+                                // Return the final result as an upper case string.
+                                fruit => fruit.ToUpper());
+
+            Console.WriteLine(
+                "The fruit with the longest name is {0}.",
+                longestName);
+
+            // This code produces the following output:
+            //
+            // The fruit with the longest name is PASSIONFRUIT.
+
+        }
+
+        private static void myAggregateOperationWithSeedAndFunc()
+        {
+            int[] ints = { 4, 8, 8, 3, 9, 0, 7, 8, 2 };
+
+            // Count the even numbers in the array, using a seed value of 0.
+            int numEven = ints.myAggregate(0, (total, next) =>
+                                                next % 2 == 0 ? total + 1 : total);
+
+            Console.WriteLine("The number of even integers is: {0}", numEven);
+
+            // This code produces the following output:
+            //
+            // The number of even integers is: 6
+        }
+
+        private static void myAggregateOperation()
+        {
+            string sentence = "the quick brown fox jumps over the lazy dog";
+
+            // Split the string into individual words.
+            string[] words = sentence.Split(' ');
+
+            // Prepend each word to the beginning of the
+            // new sentence to reverse the word order.
+            string reversed = words.myAggregate((workingSentence, next) =>
+                                                  next + " " + workingSentence);
+
+            Console.WriteLine(reversed);
+
+            // This code produces the following output:
+            //
+            // dog lazy the over jumps fox brown quick the
 
         }
 
@@ -69,7 +134,7 @@ namespace CSharpTrain
             }
             Console.WriteLine("Done!!!\n");
         }
-        /*
+        
         private static void MySelectManyProjectionWithTCollectionSelectorAndIndex()
         {
              PetOwner[] petOwners =
@@ -85,7 +150,7 @@ namespace CSharpTrain
             // Project the pet owner's name and the pet's name.
             var query =
                 petOwners
-                .mySelectMany((petOwner,i) => petOwner.Pets, (petOwner, petName) => new { petOwner, petName })
+                .mySelectMany((petOwner,i) => petOwner.Pets.mySelect(p=>p + i), (petOwner, petName) => new { petOwner, petName})
                 .myWhere(ownerAndPet => ownerAndPet.petName.StartsWith("S"))
                 .mySelect(ownerAndPet =>
                         new
@@ -101,7 +166,7 @@ namespace CSharpTrain
                 Console.WriteLine(obj);
             }
             Console.WriteLine("Done!!!\n");
-        }*/
+        }
         
         public static void MySelectManyProjectionWithSelector()
         {
