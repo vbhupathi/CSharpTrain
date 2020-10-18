@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nanib\\source\\repos\\CSharpTrain\\CSharpTrain.csproj": {}
+    "C:\\Users\\nanib\\Documents\\GitHub\\CSharpTrain\\CSharpTrain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nanib\\source\\repos\\CSharpTrain\\CSharpTrain.csproj": {
+    "C:\\Users\\nanib\\Documents\\GitHub\\CSharpTrain\\CSharpTrain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nanib\\source\\repos\\CSharpTrain\\CSharpTrain.csproj",
+        "projectUniqueName": "C:\\Users\\nanib\\Documents\\GitHub\\CSharpTrain\\CSharpTrain.csproj",
         "projectName": "CSharpTrain",
-        "projectPath": "C:\\Users\\nanib\\source\\repos\\CSharpTrain\\CSharpTrain.csproj",
+        "projectPath": "C:\\Users\\nanib\\Documents\\GitHub\\CSharpTrain\\CSharpTrain.csproj",
         "packagesPath": "C:\\Users\\nanib\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nanib\\source\\repos\\CSharpTrain\\obj\\",
+        "outputPath": "C:\\Users\\nanib\\Documents\\GitHub\\CSharpTrain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

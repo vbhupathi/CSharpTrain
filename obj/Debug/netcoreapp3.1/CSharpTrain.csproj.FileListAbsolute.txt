@@ -11,3 +11,16 @@ C:\Users\nanib\source\repos\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.cspr
 C:\Users\nanib\source\repos\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.dll
 C:\Users\nanib\source\repos\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.pdb
 C:\Users\nanib\source\repos\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.genruntimeconfig.cache
+C:\Users\nanib\Documents\GitHub\CSharpTrain\bin\Debug\netcoreapp3.1\CSharpTrain.exe
+C:\Users\nanib\Documents\GitHub\CSharpTrain\bin\Debug\netcoreapp3.1\CSharpTrain.deps.json
+C:\Users\nanib\Documents\GitHub\CSharpTrain\bin\Debug\netcoreapp3.1\CSharpTrain.runtimeconfig.json
+C:\Users\nanib\Documents\GitHub\CSharpTrain\bin\Debug\netcoreapp3.1\CSharpTrain.runtimeconfig.dev.json
+C:\Users\nanib\Documents\GitHub\CSharpTrain\bin\Debug\netcoreapp3.1\CSharpTrain.dll
+C:\Users\nanib\Documents\GitHub\CSharpTrain\bin\Debug\netcoreapp3.1\CSharpTrain.pdb
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.csprojAssemblyReference.cache
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.AssemblyInfoInputs.cache
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.AssemblyInfo.cs
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.csproj.CoreCompileInputs.cache
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.dll
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.pdb
+C:\Users\nanib\Documents\GitHub\CSharpTrain\obj\Debug\netcoreapp3.1\CSharpTrain.genruntimeconfig.cache

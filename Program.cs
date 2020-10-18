@@ -11,9 +11,9 @@ namespace CSharpTrain
         {
 
             //Aggregate Operations
-            //myAggregateOperation();
-            //myAggregateOperationWithSeedandResultSelector();
-            //myAggregateOperationWithSeedAndFunc();
+            myAggregateOperation();
+            myAggregateOperationWithSeedandResultSelector();
+            myAggregateOperationWithSeedAndFunc();
 
             /*//Filtering Data Operations
             MyWhereFilter();
@@ -33,6 +33,9 @@ namespace CSharpTrain
         private static void myAggregateOperationWithSeedandResultSelector()
         {
             string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
+            
+            Console.WriteLine($"\nThis output is from myAggregateOperationWithSeedandResultSelector:");
+
 
             // Determine whether any string in the array is longer than "banana".
             string longestName =
@@ -45,26 +48,23 @@ namespace CSharpTrain
             Console.WriteLine(
                 "The fruit with the longest name is {0}.",
                 longestName);
-
-            // This code produces the following output:
-            //
-            // The fruit with the longest name is PASSIONFRUIT.
-
+            Console.WriteLine("Done!!!\n");
         }
 
         private static void myAggregateOperationWithSeedAndFunc()
         {
             int[] ints = { 4, 8, 8, 3, 9, 0, 7, 8, 2 };
 
+            Console.WriteLine($"\nThis output is from myAggregateOperationWithSeedAndFunc:");
+
+
             // Count the even numbers in the array, using a seed value of 0.
             int numEven = ints.myAggregate(0, (total, next) =>
                                                 next % 2 == 0 ? total + 1 : total);
 
-            Console.WriteLine("The number of even integers is: {0}", numEven);
+            Console.WriteLine($"The number of even integers are: {numEven}");
+            Console.WriteLine("Done!!!\n");
 
-            // This code produces the following output:
-            //
-            // The number of even integers is: 6
         }
 
         private static void myAggregateOperation()
@@ -76,15 +76,13 @@ namespace CSharpTrain
 
             // Prepend each word to the beginning of the
             // new sentence to reverse the word order.
+            Console.WriteLine($"\nThis output is from myAggregateOperation:");
+
             string reversed = words.myAggregate((workingSentence, next) =>
                                                   next + " " + workingSentence);
 
-            Console.WriteLine(reversed);
-
-            // This code produces the following output:
-            //
-            // dog lazy the over jumps fox brown quick the
-
+            Console.WriteLine($"The reversed sentence is: \n{reversed}");
+            Console.WriteLine("Done!!!\n");
         }
 
         private static void MySelectManyProjectionWithSelectorIndex()
