@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 namespace LinqTrain
 {
-    ///<summery>
-    /// Extension Methods Reimplementation.
+    ///<summary>
+    /// Extension Methods of Filtering Data and Porjection Operations Reimplementation.
+    ///</summary>
     public static class ExtensionMethodsTrain 
     {
         /// <summary>
