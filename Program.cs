@@ -14,6 +14,12 @@ namespace CSharpTrain
             myAggregateOperation();
             myAggregateOperationWithSeedandResultSelector();
             myAggregateOperationWithSeedAndFunc();
+            
+            myCountWithSource();
+            myCountWithPredicate();
+            
+            myLongCountWithSource();
+            myLongCountWithPredicate();
 
             /*//Filtering Data Operations
             MyWhereFilter();
@@ -28,6 +34,67 @@ namespace CSharpTrain
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex();*/
 
+        }
+        private static void myLongCountWithSource()
+        {
+            string[] fruits = { "apple", "banana", "mango",
+                      "orange", "passionfruit", "grape" };
+
+            long count = fruits.myLongCount();
+
+            Console.WriteLine("There are {0} fruits in the collection.", count);
+
+        }
+
+        private static void myLongCountWithPredicate()
+        {
+            Pet[] pets = { new Pet { Name="Barley", Age=8 },
+                   new Pet { Name="Boots", Age=4 },
+                   new Pet { Name="Whiskers", Age=1 } };
+
+            const int Age = 3;
+
+            long count = pets.myLongCount(pet => pet.Age > Age);
+
+            Console.WriteLine("There are {0} animals over age {1}.", count, Age);
+        }
+
+        private static void myCountWithSource()
+        {
+            string[] fruits = { "apple", "banana", "mango", "orange", "passionfruit", "grape" };
+
+            try
+            {
+                int numberOfFruits = fruits.myCount();
+                Console.WriteLine(
+                    "There are {0} fruits in the collection.",
+                    numberOfFruits);
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("The count is too large to store as an Int32.");
+                Console.WriteLine("Try using the LongCount() method instead.");
+            }
+            
+        }        
+        private static void myCountWithPredicate()
+        {
+        
+            Pet[] pets = { new Pet { Name="Barley", Vaccinated=true },
+                   new Pet { Name="Boots", Vaccinated=false },
+                   new Pet { Name="Whiskers", Vaccinated=false } };
+
+            try
+            {
+                int numberUnvaccinated = pets.myCount(p => p.Vaccinated == false);
+                Console.WriteLine($"There are {numberUnvaccinated} unvaccinated animals.");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("The count is too large to store as an Int32.");
+                Console.WriteLine("Try using the LongCount() method instead.");
+            }        
+        
         }
 
         private static void myAggregateOperationWithSeedandResultSelector()
