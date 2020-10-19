@@ -3,11 +3,81 @@ using System.Collections.Generic;
 
 namespace LinqTrain
 {
+
+    
     ///<summery>
     /// Extension Methods of Aggregation Operations Reimplementation.
     ///</summary>
     public static class AggregationOperationsTrain 
     {
+        
+        ///<summary>
+        /// Returns an Int64 that represents the total number of elements in a sequence
+        ///</summary>
+        public static int myLongCount<TSource> (this IEnumerable<TSource> source)
+        {           
+            var sourceIterator = source.GetEnumerator(); 
+
+            int count = 0;
+            while(sourceIterator.MoveNext())
+            {
+                count++;
+            }
+            return count;
+
+        }
+        ///<summary>
+        /// Returns an Int64 that represents how many elements in a sequence satisfy a condition.
+        ///</summary>
+        public static long myLongCount<TSource> (
+            this IEnumerable<TSource> source, 
+            Func<TSource,bool> predicate)
+        {
+            int count = 0;
+            foreach (var item in source)
+            {
+                if(predicate(item)){
+                    count ++;
+                }                           
+            }             
+            return count;            
+
+        }
+
+
+        ///<summary>
+        /// Returns the number of elements in a sequence.
+        ///</summary>
+        public static int myCount<TSource> (this IEnumerable<TSource> source)
+        {           
+            var sourceIterator = source.GetEnumerator(); 
+
+            int count = 0;
+            while(sourceIterator.MoveNext())
+            {
+                count++;
+            }
+            return count;
+
+        }
+        ///<summary>
+        /// Returns a number that represents how many elements in the specified sequence satisfy a condition.
+        ///</summary>
+        public static int myCount<TSource> (
+            this IEnumerable<TSource> source, 
+            Func<TSource,bool> predicate)
+        {
+            int count = 0;
+            foreach (var item in source)
+            {
+                if(predicate(item)){
+                    count ++;
+                }                           
+            }             
+            return count;            
+
+        }
+
         ///<summary>
         /// Applies an accumulator function over a sequence.
         /// The specified seed value is used as the initial accumulator value, 
