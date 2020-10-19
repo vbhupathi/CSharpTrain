@@ -109,7 +109,13 @@ namespace LinqTrain
             TAccumulate seed, 
             Func<TAccumulate,TSource,TAccumulate> func)
         {
-            return source.myAggregate(seed, func, x => x);
+            TAccumulate current = seed;
+            foreach (var item in source)
+            {
+                current = func(current, item);
+            }
+            return current;
+            //return source.myAggregate(seed, func, x => x);
 
         }
 
