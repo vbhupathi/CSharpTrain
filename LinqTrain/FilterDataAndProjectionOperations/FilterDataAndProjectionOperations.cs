@@ -6,7 +6,7 @@ namespace LinqTrain
     ///<summary>
     /// Extension Methods of Filtering Data and Porjection Operations Reimplementation.
     ///</summary>
-    public static class ExtensionMethodsTrain 
+    public static class FilterDataAndProjectionOperations 
     {
         /// <summary>
         /// Filters a sequence of values based on a predicate        
