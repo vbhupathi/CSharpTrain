@@ -9,19 +9,24 @@ namespace CSharpTrain
     {
         static void Main(string[] args)
         {
+            //Average Operations
+            myAverageOfSequenceOfSingleValues();
+            myAverageOfSequenceOfNullableInt64Values();
+            myAverageOfASequenceOfInt32();
 
             //Aggregate Operations
             myAggregateOperation();
             myAggregateOperationWithSeedandResultSelector();
             myAggregateOperationWithSeedAndFunc();
             
+            //Count Operations
             myCountWithSource();
             myCountWithPredicate();
-            
+
             myLongCountWithSource();
             myLongCountWithPredicate();
 
-            /*//Filtering Data Operations
+           //Filtering Data Operations
             MyWhereFilter();
             MyWhereFilterWithIndex();
             
@@ -32,8 +37,42 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelector();
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
-            MySelectManyProjectionWithSelectorIndex();*/
+            MySelectManyProjectionWithSelectorIndex();
 
+        }
+        private static void  myAverageOfASequenceOfInt32()
+        {
+            string[] fruits = { "apple", "banana", "mango", "orange", "passionfruit", "grape" };
+
+            double average = fruits.myAverage(s => s.Length);
+
+            Console.WriteLine("The average string length is {0}.", average);
+
+            // This code produces the following output:
+            //
+            // The average string length is 6.5.
+        } 
+
+        private static void  myAverageOfSequenceOfNullableInt64Values()
+        {
+            long?[] longs = { null, 10007L, 37L, 399846234235L };
+
+            double? average = longs.myAverage();
+
+            Console.WriteLine($"The average is {average}." );
+        }
+
+        private static void myAverageOfSequenceOfSingleValues()
+        {
+            List<float> grades = new List<float> { 78, 92, 100, 37, 81 };
+
+            var average = grades.myAverage();
+
+            Console.WriteLine($"The average grade is {average}.");
+
+            // This code produces the following output:
+            //
+            // The average grade is 77.6.
         }
         private static void myLongCountWithSource()
         {
@@ -42,7 +81,7 @@ namespace CSharpTrain
 
             long count = fruits.myLongCount();
 
-            Console.WriteLine("There are {0} fruits in the collection.", count);
+            Console.WriteLine($"There are {count} fruits in the collection.");
 
         }
 
@@ -56,7 +95,7 @@ namespace CSharpTrain
 
             long count = pets.myLongCount(pet => pet.Age > Age);
 
-            Console.WriteLine("There are {0} animals over age {1}.", count, Age);
+            Console.WriteLine($"There are {count} animals over age {Age}.");
         }
 
         private static void myCountWithSource()
