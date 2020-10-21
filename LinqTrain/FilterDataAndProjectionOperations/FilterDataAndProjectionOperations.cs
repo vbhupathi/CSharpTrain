@@ -58,9 +58,9 @@ namespace LinqTrain
             var i = 0;
             foreach (var item in source)
             {
-                yield return selector(item, i);                
-            }
-            i++;
+                yield return selector(item, i);  
+                i++;              
+            }           
 
         }
 
