@@ -28,7 +28,7 @@ namespace CSharpTrain
             myLongCountWithSource();
             myLongCountWithPredicate();
 
-           //Filtering Data Operations
+            //Filtering Data Operations
             MyWhereFilter();
             MyWhereFilterWithIndex();
             
