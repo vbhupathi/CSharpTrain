@@ -352,3 +352,5 @@ MigrationBackup/
 *.dll
 *.pdb
 *.cache
+/bin
+/obj
