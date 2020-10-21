@@ -9,6 +9,8 @@ namespace CSharpTrain
     {
         static void Main(string[] args)
         {
+            //Max Operations
+            myMaxOfASequenceOfInt32();
             //Average Operations
             myAverageOfSequenceOfSingleValues();
             myAverageOfSequenceOfNullableInt64Values();
@@ -39,6 +41,13 @@ namespace CSharpTrain
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex();
 
+        }
+
+        private static void myMaxOfASequenceOfInt32()
+        {
+            List<int> nums = new List<int>{ 9, 12, 15, 18, 20, 3, 45};
+            var maxNum = nums.myMax();
+            Console.WriteLine($"The Maximum number from the given numbers is: {maxNum}");
         }
         private static void  myAverageOfASequenceOfInt32()
         {
