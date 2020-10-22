@@ -10,23 +10,24 @@ namespace CSharpTrain
         static void Main(string[] args)
         {
             //Max Operations
-            myMaxOfASequenceOfInt32();
-            //Average Operations
-            myAverageOfSequenceOfSingleValues();
-            myAverageOfSequenceOfNullableInt64Values();
-            myAverageOfASequenceOfInt32();
+            MyMaxOfASequenceOfInt32();
+            MyMaxOfASequenceOfNUllableDouble();
+            /*//Average Operations
+            MyAverageOfSequenceOfSingleValues();
+            MyAverageOfSequenceOfNullableInt64Values();
+            MyAverageOfASequenceOfInt32();
 
             //Aggregate Operations
-            myAggregateOperation();
-            myAggregateOperationWithSeedandResultSelector();
-            myAggregateOperationWithSeedAndFunc();
+            MyAggregateOperation();
+            MyAggregateOperationWithSeedandResultSelector();
+            MyAggregateOperationWithSeedAndFunc();
             
             //Count Operations
-            myCountWithSource();
-            myCountWithPredicate();
+            MyCountWithSource();
+            MyCountWithPredicate();
 
-            myLongCountWithSource();
-            myLongCountWithPredicate();
+            MyLongCountWithSource();
+            MyLongCountWithPredicate();
 
             //Filtering Data Operations
             MyWhereFilter();
@@ -39,17 +40,32 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelector();
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
-            MySelectManyProjectionWithSelectorIndex();
+            MySelectManyProjectionWithSelectorIndex();*/
 
         }
 
-        private static void myMaxOfASequenceOfInt32()
+        private static void MyMaxOfASequenceOfNUllableDouble()
+        {
+            double?[] doubles = { null, 1.5E+104, 9E+103, -2E+103 };
+
+            double? max = doubles.myMax();
+
+            Console.WriteLine($"The largest number is {max}.");
+
+            /*
+             This code produces the following output:
+
+             The largest number is 1.5E+104.
+            */
+        }
+
+        private static void MyMaxOfASequenceOfInt32()
         {
             List<int> nums = new List<int>{ 9, 12, 15, 18, 20, 3, 45};
             var maxNum = nums.myMax();
             Console.WriteLine($"The Maximum number from the given numbers is: {maxNum}");
         }
-        private static void  myAverageOfASequenceOfInt32()
+        private static void  MyAverageOfASequenceOfInt32()
         {
             string[] fruits = { "apple", "banana", "mango", "orange", "passionfruit", "grape" };
 
@@ -62,7 +78,7 @@ namespace CSharpTrain
             // The average string length is 6.5.
         } 
 
-        private static void  myAverageOfSequenceOfNullableInt64Values()
+        private static void  MyAverageOfSequenceOfNullableInt64Values()
         {
             long?[] longs = { null, 10007L, 37L, 399846234235L };
 
@@ -71,7 +87,7 @@ namespace CSharpTrain
             Console.WriteLine($"The average is {average}." );
         }
 
-        private static void myAverageOfSequenceOfSingleValues()
+        private static void MyAverageOfSequenceOfSingleValues()
         {
             List<float> grades = new List<float> { 78, 92, 100, 37, 81 };
 
@@ -83,7 +99,7 @@ namespace CSharpTrain
             //
             // The average grade is 77.6.
         }
-        private static void myLongCountWithSource()
+        private static void MyLongCountWithSource()
         {
             string[] fruits = { "apple", "banana", "mango",
                       "orange", "passionfruit", "grape" };
@@ -94,7 +110,7 @@ namespace CSharpTrain
 
         }
 
-        private static void myLongCountWithPredicate()
+        private static void MyLongCountWithPredicate()
         {
             Pet[] pets = { new Pet { Name="Barley", Age=8 },
                    new Pet { Name="Boots", Age=4 },
@@ -107,7 +123,7 @@ namespace CSharpTrain
             Console.WriteLine($"There are {count} animals over age {Age}.");
         }
 
-        private static void myCountWithSource()
+        private static void MyCountWithSource()
         {
             string[] fruits = { "apple", "banana", "mango", "orange", "passionfruit", "grape" };
 
@@ -125,7 +141,7 @@ namespace CSharpTrain
             }
             
         }        
-        private static void myCountWithPredicate()
+        private static void MyCountWithPredicate()
         {
         
             Pet[] pets = { new Pet { Name="Barley", Vaccinated=true },
@@ -145,7 +161,7 @@ namespace CSharpTrain
         
         }
 
-        private static void myAggregateOperationWithSeedandResultSelector()
+        private static void MyAggregateOperationWithSeedandResultSelector()
         {
             string[] fruits = { "apple", "mango", "orange", "passionfruit", "grape" };
             
@@ -166,7 +182,7 @@ namespace CSharpTrain
             Console.WriteLine("Done!!!\n");
         }
 
-        private static void myAggregateOperationWithSeedAndFunc()
+        private static void MyAggregateOperationWithSeedAndFunc()
         {
             int[] ints = { 4, 8, 8, 3, 9, 0, 7, 8, 2 };
 
@@ -182,7 +198,7 @@ namespace CSharpTrain
 
         }
 
-        private static void myAggregateOperation()
+        private static void MyAggregateOperation()
         {
             string sentence = "the quick brown fox jumps over the lazy dog";
 

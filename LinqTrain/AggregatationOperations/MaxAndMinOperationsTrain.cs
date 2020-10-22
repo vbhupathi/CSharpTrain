@@ -12,7 +12,7 @@ namespace LinqTrain
     public static class MaxAndMinOperationsTrain 
     {
         ///<summary>
-        /// Returns the maximum value in a sequence of nullable Single values.
+        /// Returns the maximum value in a sequence of Int32 values.
         ///</summary>
         public static int myMax (this IEnumerable<int> source)
         {            
@@ -25,6 +25,24 @@ namespace LinqTrain
                     currentValue = item;                    
                 } 
                 hasValue = true;              
+            }
+            return currentValue;
+        }
+
+        ///<summary>
+        /// Returns the maximum value in a sequence of nullable Double values.
+        ///</summary>
+        public static double? myMax (this IEnumerable<Nullable<double>> source)
+        {
+            double? currentValue = 0;
+            bool hasValue = false;
+            foreach (var item in source)
+            {
+                if (hasValue && item > currentValue)
+                {
+                    currentValue = item;
+                }
+                    hasValue = true;
             }
             return currentValue;
         }
