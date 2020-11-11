@@ -354,3 +354,4 @@ MigrationBackup/
 *.cache
 /bin
 /obj
+.vscode
