@@ -66,7 +66,7 @@ namespace LinqTrain
             return currentValue;
 
         }
-        
+
         ///<summary>
         /// Returns the maximum value in a sequence of Single values.
         ///</summary>
@@ -84,7 +84,24 @@ namespace LinqTrain
             }
             return currentValue;
 
+        }
 
+        ///<summary>
+        /// Returns the maximum value in a sequence of nullable Int32 values.
+        ///</summary>
+        public static int? myMax (this System.Collections.Generic.IEnumerable<Nullable<int>> source)
+        {
+            int? currentValue = 0;
+            bool hasValue = false;
+            foreach (var item in source)
+            {                   
+                if (hasValue && item > currentValue)
+                {
+                    currentValue = item;                    
+                } 
+                hasValue = true;              
+            }
+            return currentValue;
 
         }
 
