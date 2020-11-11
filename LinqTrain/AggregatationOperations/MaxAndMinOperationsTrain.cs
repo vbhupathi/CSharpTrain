@@ -65,6 +65,26 @@ namespace LinqTrain
             }
             return currentValue;
 
+        }
+        
+        ///<summary>
+        /// Returns the maximum value in a sequence of Single values.
+        ///</summary>
+        public static float myMax (this System.Collections.Generic.IEnumerable<float> source)
+        {
+            float currentValue = 0;
+            bool hasValue = false;
+            foreach (var item in source)
+            {                   
+                if (hasValue && item > currentValue)
+                {
+                    currentValue = item;                    
+                } 
+                hasValue = true;              
+            }
+            return currentValue;
+
+
 
         }
 
