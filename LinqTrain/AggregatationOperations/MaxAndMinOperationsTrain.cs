@@ -48,6 +48,25 @@ namespace LinqTrain
             }
             return currentValue;
         }
+        ///<summary>
+        /// Returns the maximum value in a sequence of nullable Int64 values.
+        ///</summary>
+        public static long? myMax (this System.Collections.Generic.IEnumerable<Nullable<long>> source)
+        {
+            long? currentValue = 0;
+            bool hasValue = false;
+            foreach (var item in source)
+            {                   
+                if (hasValue && item > currentValue)
+                {
+                    currentValue = item;                    
+                } 
+                hasValue = true;              
+            }
+            return currentValue;
+
+
+        }
 
         ///<summary>
         /// Returns the maximum value in a sequence of nullable Double values.
