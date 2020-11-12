@@ -6,10 +6,10 @@ namespace LinqTrain
 
     
     ///<summery>
-    /// Overloads of Max and Min Operations Reimplementation.
+    /// Overloads of Max Operations Reimplementation.
     /// Returns the maximum and minimum value in a sequence of values.
     ///</summary>
-    public static class MaxAndMinOperationsTrain 
+    public static class MaxOperationsTrain 
     {
         
         ///<summary>
