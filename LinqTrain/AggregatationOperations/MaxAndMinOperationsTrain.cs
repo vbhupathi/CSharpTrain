@@ -265,19 +265,32 @@ namespace LinqTrain
         ///<summary>
         /// Returns the maximum value in a generic sequence.
         ///</summary>
-        public static TSource myMax<TSource> (this System.Collections.Generic.IEnumerable<TSource> source)
+        public static TSource myMax<TSource> (this IEnumerable<TSource> source)
         {
-            var currentValue = source.GetEnumerator().Current;
-            bool hasValue = false;
-            foreach (var item in source)
-            {
-                if(hasValue)
-                {
-                    currentValue = item;
+            Comparer<TSource> compareValue = Comparer<TSource>.Default;
+            TSource value = default(TSource);
+            var currentValue = source.GetEnumerator().Current;            
+            if (value == null) {
+                foreach (var item in source) {
+                    if (item != null && (value == null || compareValue.Compare(item, value) > 0))
+                        value = item;
                 }
-                hasValue = true;                
+                return value;
             }
-            return currentValue;
+            else {
+                bool hasValue = false;
+                foreach (TSource item in source) {
+                    if (hasValue) {
+                        if (compareValue.Compare(item, value) > 0)
+                            value = item;
+                    }
+                    else {
+                        value = item;
+                        hasValue = true;
+                    }
+                }
+                return value;
+            }
         }
 
         ///<summary>
