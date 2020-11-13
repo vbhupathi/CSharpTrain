@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace LinqTrain
 {
-
     
     ///<summery>
     /// Overloads of Average Operations Reimplementation.
@@ -29,7 +28,7 @@ namespace LinqTrain
         ///<summary>
         /// Computes the average of a sequence of nullable Single values.
         ///</summary>
-        public static float? myAverage (this IEnumerable<float?> source)
+        public static float? myAverage (this IEnumerable<Nullable<float>> source)
         {
             float? current = 0;
             var count = 0;
@@ -59,7 +58,7 @@ namespace LinqTrain
         ///<summary>
         /// Computes the average of a sequence of nullable Int32 values.
         ///</summary>
-         public static double? myAverage(this IEnumerable<int?> source) {
+         public static double? myAverage(this IEnumerable<Nullable<int>> source) {
             long sum = 0;
             long count = 0;
             checked {
@@ -76,7 +75,7 @@ namespace LinqTrain
         ///<summary>
         /// Computes the average of a sequence of nullable Double values.
         ///</summary>
-        public static double? myAverage(this IEnumerable<double?> source) 
+        public static double? myAverage(this IEnumerable<Nullable<double>> source) 
         {
             double sum = 0;
             long count = 0;
@@ -158,7 +157,7 @@ namespace LinqTrain
         ///<summary>
         /// Computes the average of a sequence of nullable Decimal values.
         ///</summary>
-        public static decimal? myAverage(this IEnumerable<decimal?> source) 
+        public static decimal? myAverage(this IEnumerable<Nullable<decimal>> source) 
         {
             decimal sum = 0;
             long count = 0;
@@ -183,13 +182,13 @@ namespace LinqTrain
         ///<summary>
         /// Computes the average of a sequence of Single values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
-        public static float Average<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector) 
+        public static float myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
         ///<summary>
         /// Computes the average of a sequence of nullable Single values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
-        public static float? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<float>> selector) 
+        public static float? myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<float>> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
         ///<summary>
@@ -201,19 +200,19 @@ namespace LinqTrain
         ///<summary>
         ///Computes the average of a sequence of nullable Double values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
-        public static double? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<double>> selector) 
+        public static double? myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<double>> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
         ///<summary>
         /// Computes the average of a sequence of nullable Decimal values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
-        public static decimal? Average<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<decimal>> selector) 
+        public static decimal? myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<decimal>> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
         ///<summary>
         ///Computes the average of a sequence of Int64 values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
-        public static double Average<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector) 
+        public static double myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
 
@@ -226,13 +225,13 @@ namespace LinqTrain
         ///<summary>
         ///Computes the average of a sequence of Double values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
-        public static double Average<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector) 
+        public static double myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
         ///<summary>
         /// Computes the average of a sequence of Decimal values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>        
-        public static decimal Average<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector) 
+        public static decimal myAverage<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector) 
         => myAverage(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
 
     }
