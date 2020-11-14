@@ -62,9 +62,9 @@ namespace LinqTrain
             long sum = 0;
             long count = 0;
             checked {
-                foreach (int? v in source) {
-                    if (v != null) {
-                        sum += v.GetValueOrDefault();
+                foreach (var item in source) {
+                    if (item != null) {
+                        sum += item.GetValueOrDefault();
                         count++;
                     }
                 }
@@ -80,9 +80,9 @@ namespace LinqTrain
             double sum = 0;
             long count = 0;
             checked {
-                foreach (double? v in source) {
-                    if (v != null) {
-                        sum += v.GetValueOrDefault();
+                foreach (var item in source) {
+                    if (item != null) {
+                        sum += item.GetValueOrDefault();
                         count++;
                     }
                 }
@@ -99,8 +99,8 @@ namespace LinqTrain
             long sum = 0;
             long count = 0;
             checked {
-                foreach (long v in source) {
-                    sum += v;
+                foreach (var item in source) {
+                    sum += item;
                     count++;
                 }
             }
@@ -114,8 +114,8 @@ namespace LinqTrain
             long sum = 0;
             long count = 0;
             checked {
-                foreach (int v in source) {
-                    sum += v;
+                foreach (var item in source) {
+                    sum += item;
                     count++;
                 }
             }
@@ -130,8 +130,8 @@ namespace LinqTrain
             double sum = 0;
             long count = 0;
             checked {
-                foreach (double v in source) {
-                    sum += v;
+                foreach (var item in source) {
+                    sum += item;
                     count++;
                 }
             }
@@ -146,8 +146,8 @@ namespace LinqTrain
             decimal sum = 0;
             long count = 0;
             checked {
-                foreach (decimal v in source) {
-                    sum += v;
+                foreach (var item in source) {
+                    sum += item;
                     count++;
                 }
             }
@@ -162,9 +162,9 @@ namespace LinqTrain
             decimal sum = 0;
             long count = 0;
             checked {
-                foreach (decimal? v in source) {
-                    if (v != null) {
-                        sum += v.GetValueOrDefault();
+                foreach (var item in source) {
+                    if (item != null) {
+                        sum += item.GetValueOrDefault();
                         count++;
                     }
                 }
