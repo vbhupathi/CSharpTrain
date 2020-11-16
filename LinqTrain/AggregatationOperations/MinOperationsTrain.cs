@@ -2,9 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace LinqTrain
-{
-
-    
+{    
     ///<summery>
     /// Overloads of Min Operations Reimplementation.
     /// Returns the minimum value in a sequence of values.
@@ -21,7 +19,7 @@ namespace LinqTrain
             bool hasValue = false;
             foreach (var item in source)
             {                   
-                if (hasValue && item > currentValue)
+                if (hasValue && item < currentValue)
                 {
                     currentValue = item;                    
                 } 
