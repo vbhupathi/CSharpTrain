@@ -9,6 +9,7 @@ namespace CSharpTrain
     {
         static void Main(string[] args)
         {
+            myConcatExample();
             //Max Operations
             MyMaxOfASequenceOfInt32();
             MyMaxOfASequenceOfNUllableDouble();
@@ -42,6 +43,42 @@ namespace CSharpTrain
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex();*/
 
+        }
+        public static Pet[] GetCats()
+        {
+            Pet[] cats = { new Pet { Name="Barley", Age=8 },
+                        new Pet { Name="Boots", Age=4 },
+                        new Pet { Name="Whiskers", Age=1 } };
+            return cats;
+        }
+
+        public static Pet[] GetDogs()
+        {
+            Pet[] dogs = { new Pet { Name="Bounder", Age=3 },
+                        new Pet { Name="Snoopy", Age=14 },
+                        new Pet { Name="Fido", Age=9 } };
+            return dogs;
+        }
+        private static void myConcatExample()
+        {
+            Pet[] cats = GetCats();
+            Pet[] dogs = GetDogs();
+
+            var query = cats.mySelect(cat => cat.Name).myConcat(dogs.mySelect(dog => dog.Name));
+
+            foreach (string name in query)
+            {
+                Console.WriteLine(name);
+            }
+
+            // This code produces the following output:
+            //
+            // Barley
+            // Boots
+            // Whiskers
+            // Bounder
+            // Snoopy
+            // Fido
         }
 
         private static void MyMaxOfASequenceOfNUllableDouble()
