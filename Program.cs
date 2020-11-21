@@ -13,7 +13,7 @@ namespace CSharpTrain
             //Max Operations
             MyMaxOfASequenceOfInt32();
             MyMaxOfASequenceOfNUllableDouble();
-            /*//Average Operations
+            //Average Operations
             MyAverageOfSequenceOfSingleValues();
             MyAverageOfSequenceOfNullableInt64Values();
             MyAverageOfASequenceOfInt32();
@@ -41,7 +41,7 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelector();
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
-            MySelectManyProjectionWithSelectorIndex();*/
+            MySelectManyProjectionWithSelectorIndex();
 
         }
         public static Pet[] GetCats()
