@@ -29,6 +29,7 @@ namespace CSharpTrain
             myDistinctOfIntegerSequence();
             myDistinctOfSpecifiedIEqualityComparerValues();
             myExceptToCompareTwoSequencesOfNumbers();
+            myExceptProducesTheSetDifferenceOfTwoSequences();
 
             //Concatenation Operation
             myConcatExample();
@@ -67,6 +68,31 @@ namespace CSharpTrain
             MySelectManyProjectionWithSelectorIndex(); 
         }
 
+        private static void myExceptProducesTheSetDifferenceOfTwoSequences()
+        {
+            Product[] fruits1 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 },
+                        new Product { Name = "lemon", Code = 12 } };
+
+            Product[] fruits2 = { new Product { Name = "apple", Code = 9 } };
+
+            //Get all the elements from the first array
+            //except for the elements from the second array.
+
+            IEnumerable<Product> except =
+                fruits1.myExcept(fruits2, new ProductComparer());
+
+            foreach (var product in except)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+              This code produces the following output:
+
+              orange 4
+              lemon 12
+            */
+        }
+
         private static void myExceptToCompareTwoSequencesOfNumbers()
         {
             double[] numbers1 = { 2.0, 2.0, 2.1, 2.2, 2.3, 2.3, 2.4, 2.5 };
@@ -87,6 +113,7 @@ namespace CSharpTrain
              2.5
             */
         }
+
         private static void myDistinctOfSpecifiedIEqualityComparerValues()
         {
             Product[] products = { new Product { Name = "apple", Code = 9 },
