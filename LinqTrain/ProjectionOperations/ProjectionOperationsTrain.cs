@@ -4,40 +4,11 @@ using System.Collections.Generic;
 namespace LinqTrain
 {
     ///<summary>
-    /// Extension Methods of Filtering Data and Porjection Operations Reimplementation.
+    /// Projection refers to the operation of transforming an object into a new form that often consists only of those properties that will be subsequently used. 
     ///</summary>
-    public static class FilterDataAndProjectionOperations 
+    public static class ProjectionOperationsTrain
     {
-        /// <summary>
-        /// Filters a sequence of values based on a predicate        
-        /// </summary>
-        public static IEnumerable<TSource> myWhere<TSource>(this IEnumerable<TSource> source, Func<TSource, Boolean> predicate)
-        {
-            foreach (var item in source)
-            {
-                if(predicate(item))
-                {
-                    yield return item;
-                }                
-            }
-        }
-
-        ///<summary>
-        /// Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
-        ///</summary>
-        public static IEnumerable<TSource> myWhere<TSource> (this IEnumerable<TSource> source, Func<TSource,int,bool> predicate)
-        {
-                int i = 0;
-
-            foreach (var item in source)
-            {
-                if (predicate(item, i))
-                {
-                    yield return item;                    
-                }
-                i++;                
-            }
-        }
+        
         ///<summary>
         ///Projects each element of a sequence into a new form
         ///</summary>\

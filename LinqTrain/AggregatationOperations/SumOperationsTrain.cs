@@ -155,62 +155,62 @@ namespace LinqTrain
         ///Computes the Sum of a sequence of nullable Int32 values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static double? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<int>> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Computes the Sum of a sequence of Single values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static float mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Computes the Sum of a sequence of nullable Single values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static float? mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<float>> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Computes the Sum of a sequence of nullable Int64 values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static double? Sum<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<long>> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         ///Computes the Sum of a sequence of nullable Double values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static double? mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<double>> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Computes the Sum of a sequence of nullable Decimal values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static decimal? mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<decimal>> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         ///Computes the Sum of a sequence of Int64 values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static double mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
 
         ///<summary>
         /// Computes the Sum of a sequence of Int32 values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static double mySum<TSource> (this IEnumerable<TSource> source, Func<TSource,int> selector)
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source,selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source,selector));
 
         ///<summary>
         ///Computes the Sum of a sequence of Double values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>
         public static double mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Computes the Sum of a sequence of Decimal values that are obtained by invoking a transform function on each element of the input sequence.
         ///</summary>        
         public static decimal mySum<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector) 
-        => mySum(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => mySum(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
     }
 }
