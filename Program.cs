@@ -25,7 +25,17 @@ namespace CSharpTrain
     
         static void Main(string[] args)
         {
+            //Set Operations
+            myDistinctOfIntegerSequence();
+            myDistinctOfSpecifiedIEqualityComparerValues();
+            myExceptToCompareTwoSequencesOfNumbers();
+            myExceptProducesTheSetDifferenceOfTwoSequences();
+            myIntersectToCompareTwoSequencesOfNumbers();
+            myIntersectProducesTheSetIntersectionOfTwoSequences();
+            myUnionToCompareTwoSequencesOfNumbers();
+            myUnionProducesTheSetUnionOfTwoSequences();
 
+            //Concatenation Operation
             myConcatExample();
             //Max Operations
             MyMaxOfASequenceOfInt32();
@@ -59,7 +69,184 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelector();
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
-            MySelectManyProjectionWithSelectorIndex();
+            MySelectManyProjectionWithSelectorIndex(); 
+        }
+
+        private static void myUnionProducesTheSetUnionOfTwoSequences()
+        {
+            Product[] store1 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 } };
+
+            Product[] store2 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "lemon", Code = 12 } };
+
+            /// Get the products from the first array
+            // that have duplicates in the second array.
+
+            IEnumerable<Product> duplicates =
+                store1.myUnion(store2, new ProductComparer());
+
+            foreach (var product in duplicates)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+                This code produces the following output:
+                apple 9
+                orange 4
+                lemon 12
+            */
+        }
+
+        private static void myUnionToCompareTwoSequencesOfNumbers()
+        {
+            int[] ints1 = { 5, 3, 9, 7, 5, 9, 3, 7 };
+            int[] ints2 = { 8, 3, 6, 4, 4, 9, 1, 0 };
+
+            IEnumerable<int> union = ints1.myUnion(ints2);
+
+            foreach (int num in union)
+            {
+                Console.Write("{0} ", num);
+            }
+
+            /*
+             This code produces the following output:
+
+             5 3 9 7 8 6 4 1 0
+            */
+        }
+        private static void myIntersectProducesTheSetIntersectionOfTwoSequences()
+        {
+            Product[] store1 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 } };
+
+            Product[] store2 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "lemon", Code = 12 } };
+
+            /// Get the products from the first array
+            // that have duplicates in the second array.
+
+            IEnumerable<Product> duplicates =
+                store1.myIntersect(store2, new ProductComparer());
+
+            foreach (var product in duplicates)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+                This code produces the following output:
+                apple 9
+            */
+        }
+
+        private static void myIntersectToCompareTwoSequencesOfNumbers()
+        {
+            int[] id1 = { 44, 26, 92, 30, 71, 38 };
+            int[] id2 = { 39, 59, 83, 47, 26, 4, 30 };
+
+            IEnumerable<int> both = id1.myIntersect(id2);
+
+            foreach (int id in both)
+                Console.WriteLine(id);
+
+            /*
+             This code produces the following output:
+
+             26
+             30
+            */
+        }
+
+        private static void myExceptProducesTheSetDifferenceOfTwoSequences()
+        {
+            Product[] fruits1 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 },
+                        new Product { Name = "lemon", Code = 12 } };
+
+            Product[] fruits2 = { new Product { Name = "apple", Code = 9 } };
+
+            //Get all the elements from the first array
+            //except for the elements from the second array.
+
+            IEnumerable<Product> except =
+                fruits1.myExcept(fruits2, new ProductComparer());
+
+            foreach (var product in except)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+              This code produces the following output:
+
+              orange 4
+              lemon 12
+            */
+        }
+
+        private static void myExceptToCompareTwoSequencesOfNumbers()
+        {
+            double[] numbers1 = { 2.0, 2.0, 2.1, 2.2, 2.3, 2.3, 2.4, 2.5 };
+            double[] numbers2 = { 2.2 };
+
+            IEnumerable<double> onlyInFirstSet = numbers1.myExcept(numbers2);
+
+            foreach (double number in onlyInFirstSet)
+                Console.WriteLine(number);
+
+            /*
+             This code produces the following output:
+
+             2
+             2.1
+             2.3
+             2.4
+             2.5
+            */
+        }
+
+        private static void myDistinctOfSpecifiedIEqualityComparerValues()
+        {
+            Product[] products = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 },
+                       new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "lemon", Code = 12 } };
+
+            //Exclude duplicates.
+
+            IEnumerable<Product> noduplicates =
+                products.myDistinct();
+
+            foreach (var product in noduplicates)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+                This code produces the following output:
+                apple 9
+                orange 4
+                lemon 12
+            */
+        }
+
+        private static void myDistinctOfIntegerSequence()
+        {
+            List<int> ages = new List<int> { 21, 46, 46, 55, 17, 21, 55, 55 };
+
+            IEnumerable<int> distinctAges = ages.myDistinct();
+
+            Console.WriteLine("Distinct ages:");
+
+            foreach (int age in distinctAges)
+            {
+                Console.WriteLine(age);
+            }
+
+            /*
+             This code produces the following output:
+
+             Distinct ages:
+             21
+             46
+             55
+             17
+            */
         }
        
         
