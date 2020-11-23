@@ -7,8 +7,25 @@ namespace CSharpTrain
 {
     partial class Program
     {
+        public static Pet[] GetCats()
+        {
+            Pet[] cats = { new Pet { Name="Barley", Age=8 },
+                        new Pet { Name="Boots", Age=4 },
+                        new Pet { Name="Whiskers", Age=1 } };
+            return cats;
+        }
+
+        public static Pet[] GetDogs()
+        {
+            Pet[] dogs = { new Pet { Name="Bounder", Age=3 },
+                        new Pet { Name="Snoopy", Age=14 },
+                        new Pet { Name="Fido", Age=9 } };
+            return dogs;
+        }
+    
         static void Main(string[] args)
         {
+
             myConcatExample();
             //Max Operations
             MyMaxOfASequenceOfInt32();
@@ -31,6 +48,7 @@ namespace CSharpTrain
             MyLongCountWithPredicate();
 
             //Filtering Data Operations
+            MyOfTypeFilter();
             MyWhereFilter();
             MyWhereFilterWithIndex();
             
@@ -42,23 +60,9 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex();
-
         }
-        public static Pet[] GetCats()
-        {
-            Pet[] cats = { new Pet { Name="Barley", Age=8 },
-                        new Pet { Name="Boots", Age=4 },
-                        new Pet { Name="Whiskers", Age=1 } };
-            return cats;
-        }
-
-        public static Pet[] GetDogs()
-        {
-            Pet[] dogs = { new Pet { Name="Bounder", Age=3 },
-                        new Pet { Name="Snoopy", Age=14 },
-                        new Pet { Name="Fido", Age=9 } };
-            return dogs;
-        }
+       
+        
         private static void myConcatExample()
         {
             Pet[] cats = GetCats();
@@ -79,6 +83,44 @@ namespace CSharpTrain
             // Bounder
             // Snoopy
             // Fido
+        }
+
+        private static void MyOfTypeFilter()
+        {
+            // Apply OfType() to the ArrayList.
+            System.Collections.ArrayList fruits = new System.Collections.ArrayList(4){"Mango","Orange","Apple","3.0","Banana"};
+            IEnumerable<string> query1 = fruits.myOfType<string>();
+
+            Console.WriteLine("Elements of type 'string' are:");
+            foreach (string fruit in query1)
+            {
+                Console.WriteLine(fruit);
+            }
+
+            // The following query shows that the standard query operators such as
+            // Where() can be applied to the ArrayList type after calling OfType().
+            IEnumerable<string> query2 =
+                fruits.myOfType<string>().myWhere(fruit => fruit.ToLower().Contains("n"));
+
+            Console.WriteLine("\nThe following strings contain 'n':");
+            foreach (string fruit in query2)
+            {
+                Console.WriteLine(fruit);
+            }
+
+            // This code produces the following output:
+            //
+            // Elements of type 'string' are:
+            // Mango
+            // Orange
+            // Apple
+            // Banana
+            //
+            // The following strings contain 'n':
+            // Mango
+            // Orange
+            // Banana
+
         }
 
         private static void MyMaxOfASequenceOfNUllableDouble()
