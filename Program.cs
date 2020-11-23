@@ -30,6 +30,8 @@ namespace CSharpTrain
             myDistinctOfSpecifiedIEqualityComparerValues();
             myExceptToCompareTwoSequencesOfNumbers();
             myExceptProducesTheSetDifferenceOfTwoSequences();
+            myIntersectToCompareTwoSequencesOfNumbers();
+            myIntersectProducesTheSetIntersectionOfTwoSequences();
 
             //Concatenation Operation
             myConcatExample();
@@ -66,6 +68,46 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex(); 
+        }
+        private static void myIntersectProducesTheSetIntersectionOfTwoSequences()
+        {
+            Product[] store1 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 } };
+
+            Product[] store2 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "lemon", Code = 12 } };
+
+            /// Get the products from the first array
+            // that have duplicates in the second array.
+
+            IEnumerable<Product> duplicates =
+                store1.myIntersect(store2, new ProductComparer());
+
+            foreach (var product in duplicates)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+                This code produces the following output:
+                apple 9
+            */
+        }
+
+        private static void myIntersectToCompareTwoSequencesOfNumbers()
+        {
+            int[] id1 = { 44, 26, 92, 30, 71, 38 };
+            int[] id2 = { 39, 59, 83, 47, 26, 4, 30 };
+
+            IEnumerable<int> both = id1.myIntersect(id2);
+
+            foreach (int id in both)
+                Console.WriteLine(id);
+
+            /*
+             This code produces the following output:
+
+             26
+             30
+            */
         }
 
         private static void myExceptProducesTheSetDifferenceOfTwoSequences()
