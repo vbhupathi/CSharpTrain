@@ -28,6 +28,7 @@ namespace CSharpTrain
             //Set Operations
             myDistinctOfIntegerSequence();
             myDistinctOfSpecifiedIEqualityComparerValues();
+            myExceptToCompareTwoSequencesOfNumbers();
 
             //Concatenation Operation
             myConcatExample();
@@ -63,7 +64,28 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelector();
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
-            MySelectManyProjectionWithSelectorIndex();
+            MySelectManyProjectionWithSelectorIndex(); 
+        }
+
+        private static void myExceptToCompareTwoSequencesOfNumbers()
+        {
+            double[] numbers1 = { 2.0, 2.0, 2.1, 2.2, 2.3, 2.3, 2.4, 2.5 };
+            double[] numbers2 = { 2.2 };
+
+            IEnumerable<double> onlyInFirstSet = numbers1.myExcept(numbers2);
+
+            foreach (double number in onlyInFirstSet)
+                Console.WriteLine(number);
+
+            /*
+             This code produces the following output:
+
+             2
+             2.1
+             2.3
+             2.4
+             2.5
+            */
         }
         private static void myDistinctOfSpecifiedIEqualityComparerValues()
         {
