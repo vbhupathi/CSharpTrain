@@ -210,55 +210,55 @@ namespace LinqTrain
         /// Invokes a transform function on each element of a sequence and returns the minimum Single value.
         ///</summary>
         public static float myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Nullable Single value.
         ///</summary>
         public static float? myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<float>> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Nullable Int64 value.
         ///</summary>
         public static long? myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<long>> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Nullable Int32 value.
         ///</summary>
         public static int? myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<int>> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Nullable Double value.
         ///</summary>
         public static double? myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<double>> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Int64 value.
         ///</summary>
         public static long myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Int32 value.
         ///</summary>
         public static int myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Double value.
         ///</summary>
         public static double myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
         
         
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the minimum Decimal value.
         ///</summary>
         public static decimal myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Returns the minimum value in a generic sequence.
@@ -295,6 +295,6 @@ namespace LinqTrain
         /// Invokes a transform function on each element of a sequence and returns the minimum Nullable Decimal value.
         ///</summary>
         public static decimal? myMin<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<decimal>> selector) 
-        => myMin(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));        
+        => myMin(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));        
     }
 }

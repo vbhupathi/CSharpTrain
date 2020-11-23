@@ -212,55 +212,55 @@ namespace LinqTrain
         /// Invokes a transform function on each element of a sequence and returns the maximum Single value.
         ///</summary>
         public static float myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Nullable Single value.
         ///</summary>
         public static float? myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<float>> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Nullable Int64 value.
         ///</summary>
         public static long? myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<long>> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Nullable Int32 value.
         ///</summary>
         public static int? myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<int>> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Nullable Double value.
         ///</summary>
         public static double? myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<double>> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Int64 value.
         ///</summary>
         public static long myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Int32 value.
         ///</summary>
         public static int myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Double value.
         ///</summary>
         public static double myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
         
         
         ///<summary>
         /// Invokes a transform function on each element of a sequence and returns the maximum Decimal value.
         ///</summary>
         public static decimal myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));
 
         ///<summary>
         /// Returns the maximum value in a generic sequence.
@@ -297,6 +297,6 @@ namespace LinqTrain
         /// Invokes a transform function on each element of a sequence and returns the maximum Nullable Decimal value.
         ///</summary>
         public static decimal? myMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Nullable<decimal>> selector) 
-        => myMax(LinqTrain.FilterDataAndProjectionOperations.mySelect(source, selector));        
+        => myMax(LinqTrain.ProjectionOperationsTrain.mySelect(source, selector));        
     }
 }
