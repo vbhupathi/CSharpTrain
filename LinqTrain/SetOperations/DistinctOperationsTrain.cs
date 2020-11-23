@@ -15,14 +15,34 @@ namespace LinqTrain
        ///</summary>
        public static IEnumerable<TSource> myDistinct<TSource> (this IEnumerable<TSource> source)
        {
-        var value = source.GetEnumerator();
-           var currentValue = value.Current;
+           return source.myDistinct(EqualityComparer<TSource>.Default);
+           
+           /*HashSet<TSource> set = new HashSet<TSource>();           
            foreach (var item in source)
            {
-               
-           }
-           return source;
+               if (set.Add(item))
+                {
+                    yield return item;
+                }
+           }  */       
 
        }
+               
+        ///<summary>
+        /// Returns distinct elements from a sequence by using a specified IEqualityComparer<T> to compare values.
+        ///</summary>
+        public static IEnumerable<TSource> myDistinct<TSource>(
+            this IEnumerable<TSource> source,
+            IEqualityComparer<TSource> comparer)
+        {
+            HashSet<TSource> setSource = new HashSet<TSource>(comparer);
+            foreach (TSource item in source)
+            {
+                if (setSource.Add(item))
+                {
+                    yield return item;
+                }
+            }
+        }        
     }
 }
