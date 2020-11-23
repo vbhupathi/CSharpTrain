@@ -32,6 +32,8 @@ namespace CSharpTrain
             myExceptProducesTheSetDifferenceOfTwoSequences();
             myIntersectToCompareTwoSequencesOfNumbers();
             myIntersectProducesTheSetIntersectionOfTwoSequences();
+            myUnionToCompareTwoSequencesOfNumbers();
+            myUnionProducesTheSetUnionOfTwoSequences();
 
             //Concatenation Operation
             myConcatExample();
@@ -68,6 +70,50 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex(); 
+        }
+
+        private static void myUnionProducesTheSetUnionOfTwoSequences()
+        {
+            Product[] store1 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "orange", Code = 4 } };
+
+            Product[] store2 = { new Product { Name = "apple", Code = 9 },
+                       new Product { Name = "lemon", Code = 12 } };
+
+            /// Get the products from the first array
+            // that have duplicates in the second array.
+
+            IEnumerable<Product> duplicates =
+                store1.myUnion(store2, new ProductComparer());
+
+            foreach (var product in duplicates)
+                Console.WriteLine(product.Name + " " + product.Code);
+
+            /*
+                This code produces the following output:
+                apple 9
+                orange 4
+                lemon 12
+            */
+        }
+
+        private static void myUnionToCompareTwoSequencesOfNumbers()
+        {
+            int[] ints1 = { 5, 3, 9, 7, 5, 9, 3, 7 };
+            int[] ints2 = { 8, 3, 6, 4, 4, 9, 1, 0 };
+
+            IEnumerable<int> union = ints1.myUnion(ints2);
+
+            foreach (int num in union)
+            {
+                Console.Write("{0} ", num);
+            }
+
+            /*
+             This code produces the following output:
+
+             5 3 9 7 8 6 4 1 0
+            */
         }
         private static void myIntersectProducesTheSetIntersectionOfTwoSequences()
         {
