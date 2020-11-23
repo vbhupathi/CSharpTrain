@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LinqTain
+namespace LinqTrain
 {
     ///<summary>
     /// Returns the set difference, which means the elements of one collection that do not appear in a second collection.
@@ -15,7 +15,15 @@ namespace LinqTain
            this IEnumerable<TSource> first, 
            IEnumerable<TSource> second)
        {
-           return first.myExcept(second);
+          // return first.myExcept(second);
+           HashSet<TSource> set = new HashSet<TSource>(second, EqualityComparer<TSource>.Default);           
+           foreach (var item in first)
+           {
+               if (set.Add(item))
+                {
+                    yield return item;
+                }
+           }  
 
        }
                
