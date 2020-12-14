@@ -23,8 +23,8 @@ namespace LinqTrain
                     yield return defaultValue;
                 }
             }
-
        }
+       
        ///<summary>
        /// Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.
        ///</summary>

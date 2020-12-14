@@ -25,6 +25,10 @@ namespace CSharpTrain
     
         static void Main(string[] args)
         {
+            //GenerationOperations
+            DefaultIfEmptyEx2();
+            DefaultIfEmptyEx1();
+
             //Set Operations
             myDistinctOfIntegerSequence();
             myDistinctOfSpecifiedIEqualityComparerValues();
@@ -70,6 +74,46 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex(); 
+        }
+        public static void DefaultIfEmptyEx1()
+        {
+            List<Pet> pets =
+                new List<Pet>{ new Pet { Name="Barley", Age=8 },
+                            new Pet { Name="Boots", Age=4 },
+                            new Pet { Name="Whiskers", Age=1 } };
+
+            foreach (Pet pet in pets.myDefaultIfEmpty())
+            {
+                Console.WriteLine(pet.Name);
+            }
+            List<int> numbers = new List<int>();
+
+            foreach (int number in numbers.myDefaultIfEmpty())
+            {
+                Console.WriteLine(number);
+            }
+        }
+
+        public static void DefaultIfEmptyEx2()
+        {
+            Pet defaultPet = new Pet { Name = "Default Pet", Age = 0 };
+
+            List<Pet> pets1 =
+                new List<Pet>{ new Pet { Name="Barley", Age=8 },
+                            new Pet { Name="Boots", Age=4 },
+                            new Pet { Name="Whiskers", Age=1 } };
+
+            foreach (Pet pet in pets1.myDefaultIfEmpty(defaultPet))
+            {
+                Console.WriteLine("Name: {0}", pet.Name);
+            }
+
+            List<Pet> pets2 = new List<Pet>();
+
+            foreach (Pet pet in pets2.myDefaultIfEmpty(defaultPet))
+            {
+                Console.WriteLine("\nName: {0}", pet.Name);
+            }
         }
 
         private static void myUnionProducesTheSetUnionOfTwoSequences()
