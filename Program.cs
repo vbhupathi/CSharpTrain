@@ -25,6 +25,11 @@ namespace CSharpTrain
     
         static void Main(string[] args)
         {
+            //GenerationOperations
+            DefaultIfEmptyEx2();
+            DefaultIfEmptyEx1();
+            EmptyExample();
+
             //Set Operations
             myDistinctOfIntegerSequence();
             myDistinctOfSpecifiedIEqualityComparerValues();
@@ -70,6 +75,81 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex(); 
+        }
+        public static void EmptyExample()
+        {
+            string[] names1 = { "Hartono, Tommy" };
+            string[] names2 = { "Adams, Terry", "Andersen, Henriette Thaulow",
+                                "Hedlund, Magnus", "Ito, Shu" };
+            string[] names3 = { "Solanki, Ajay", "Hoeing, Helge",
+                                "Andersen, Henriette Thaulow",
+                                "Potra, Cristina", "Iallo, Lucio" };
+
+            List<string[]> namesList =
+                new List<string[]> { names1, names2, names3 };
+
+            // Only include arrays that have four or more elements
+            IEnumerable<string> allNames =
+                namesList.myAggregate(System.Linq.Enumerable.Empty<string>(),
+                (current, next) => next.Length > 3 ? current.myUnion(next) : current);
+
+            foreach (string name in allNames)
+            {
+                Console.WriteLine(name);
+            }
+
+            /*
+            This code produces the following output:
+
+            Adams, Terry
+            Andersen, Henriette Thaulow
+            Hedlund, Magnus
+            Ito, Shu
+            Solanki, Ajay
+            Hoeing, Helge
+            Potra, Cristina
+            Iallo, Lucio
+            */
+        }
+        public static void DefaultIfEmptyEx1()
+        {
+            List<Pet> pets =
+                new List<Pet>{ new Pet { Name="Barley", Age=8 },
+                            new Pet { Name="Boots", Age=4 },
+                            new Pet { Name="Whiskers", Age=1 } };
+
+            foreach (Pet pet in pets.myDefaultIfEmpty())
+            {
+                Console.WriteLine(pet.Name);
+            }
+            List<int> numbers = new List<int>();
+
+            foreach (int number in numbers.myDefaultIfEmpty())
+            {
+                Console.WriteLine(number);
+            }
+        }
+
+        public static void DefaultIfEmptyEx2()
+        {
+            Pet defaultPet = new Pet { Name = "Default Pet", Age = 0 };
+
+            List<Pet> pets1 =
+                new List<Pet>{ new Pet { Name="Barley", Age=8 },
+                            new Pet { Name="Boots", Age=4 },
+                            new Pet { Name="Whiskers", Age=1 } };
+
+            foreach (Pet pet in pets1.myDefaultIfEmpty(defaultPet))
+            {
+                Console.WriteLine("Name: {0}", pet.Name);
+            }
+
+            List<Pet> pets2 = new List<Pet>();
+
+            foreach (Pet pet in pets2.myDefaultIfEmpty(defaultPet))
+            {
+                Console.WriteLine("\nName: {0}", pet.Name);
+            }
         }
 
         private static void myUnionProducesTheSetUnionOfTwoSequences()
