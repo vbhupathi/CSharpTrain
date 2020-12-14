@@ -4,7 +4,7 @@ namespace LinqTrain
     /// Returns an empty collection.
     /// Returns an empty IEnumerable<T> that has the specified type argument.
     ///</summary>
-    public class EmptyTrain
+    public static class EmptyTrain
     {
         ///<summary>
         /// Returns an empty IEnumerable<T> that has the specified type argument.

@@ -28,6 +28,7 @@ namespace CSharpTrain
             //GenerationOperations
             DefaultIfEmptyEx2();
             DefaultIfEmptyEx1();
+            EmptyExample();
 
             //Set Operations
             myDistinctOfIntegerSequence();
@@ -74,6 +75,41 @@ namespace CSharpTrain
             MySelectManyProjectionWithTCollectionSelectorAndIndex();
             MySelectManyProjectionWithSelector();
             MySelectManyProjectionWithSelectorIndex(); 
+        }
+        public static void EmptyExample()
+        {
+            string[] names1 = { "Hartono, Tommy" };
+            string[] names2 = { "Adams, Terry", "Andersen, Henriette Thaulow",
+                                "Hedlund, Magnus", "Ito, Shu" };
+            string[] names3 = { "Solanki, Ajay", "Hoeing, Helge",
+                                "Andersen, Henriette Thaulow",
+                                "Potra, Cristina", "Iallo, Lucio" };
+
+            List<string[]> namesList =
+                new List<string[]> { names1, names2, names3 };
+
+            // Only include arrays that have four or more elements
+            IEnumerable<string> allNames =
+                namesList.myAggregate(System.Linq.Enumerable.Empty<string>(),
+                (current, next) => next.Length > 3 ? current.myUnion(next) : current);
+
+            foreach (string name in allNames)
+            {
+                Console.WriteLine(name);
+            }
+
+            /*
+            This code produces the following output:
+
+            Adams, Terry
+            Andersen, Henriette Thaulow
+            Hedlund, Magnus
+            Ito, Shu
+            Solanki, Ajay
+            Hoeing, Helge
+            Potra, Cristina
+            Iallo, Lucio
+            */
         }
         public static void DefaultIfEmptyEx1()
         {
